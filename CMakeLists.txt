@@ -1,7 +1,7 @@
 include(FetchContent)
 
 cmake_minimum_required(VERSION 3.5)
-project(GraphSTEP VERSION 1.0.0)
+project(GraphSTEP VERSION 1.1.0)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -14,10 +14,6 @@ endif()
 
 ###############################################################################
 # External dependencies
-
-# Fetch nlohmann_json
-FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz)
-FetchContent_MakeAvailable(json)
 
 # Directory for external libraries
 set(EXTERNAL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external)
@@ -35,7 +31,11 @@ if( NOT IS_DIRECTORY ${STEPCODE_BUILD_DIR} )
     message( FATAL_ERROR "STEPcode build dir does not exist. You need to build STEPcode first..." )
 endif( NOT IS_DIRECTORY ${STEPCODE_BUILD_DIR} )
 
-# CPR
+# nlohmann_json
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz)
+FetchContent_MakeAvailable(json)
+
+# cpr
 FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git GIT_TAG 3b15fa82ea74739b574d705fea44959b58142eb8)
 FetchContent_MakeAvailable(cpr)
 

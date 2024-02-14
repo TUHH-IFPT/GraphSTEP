@@ -1,6 +1,3 @@
-[submodule "external/stepcode"]
+[submodule "stepcode"]
 	path = external/stepcode
 	url = https://github.com/stepcode/stepcode.git
-[submodule "external/spdlog"]
-	path = external/spdlog
-	url = https://github.com/gabime/spdlog.git

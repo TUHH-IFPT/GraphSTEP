@@ -6,6 +6,4 @@ add_library(Tools SHARED
             Logger.cpp
 )
 
-target_include_directories(Tools PUBLIC ${EXTERNAL_DIR}/spdlog/include)
-
-target_link_libraries(Tools PRIVATE cpr)
+target_link_libraries(Tools PRIVATE cpr::cpr spdlog::spdlog)

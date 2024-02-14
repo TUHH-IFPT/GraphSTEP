@@ -1,4 +1,6 @@
-find_package(yaml-cpp QUIET)
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+find_package(spdlog REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 add_subdirectory(tools)
 
@@ -14,8 +16,6 @@ add_library(GraphSTEPLib SHARED
             STEPAnalyser.cpp
 )
 
-find_package(Eigen3 3.3 REQUIRED NO_MODULE)
-
 target_include_directories(GraphSTEPLib PUBLIC 
                             ${CMAKE_CURRENT_SOURCE_DIR}
                             ${CMAKE_CURRENT_SOURCE_DIR}/tools
@@ -30,6 +30,7 @@ target_link_libraries(GraphSTEPLib
                       ${STEPCODE_BUILD_DIR}/lib/libsteputils.so 
                       ${STEPCODE_BUILD_DIR}/lib/libsdai_ap242.so 
                       nlohmann_json::nlohmann_json
+                      spdlog::spdlog
                       Eigen3::Eigen
                       yaml-cpp
                       cpr::cpr

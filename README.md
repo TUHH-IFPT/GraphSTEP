@@ -35,6 +35,7 @@ In a nutshell, it brings your STEP files into the cloud and lets you do operatio
 
 Initialize and build external dependencies:
 ``` sh
+git submodule update --recursive --init
 ./build.sh
 ```
 Build GraphSTEP:
