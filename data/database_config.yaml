@@ -1,0 +1,5 @@
+host: http://localhost:7474/
+database_name: productgraph
+credentials:
+  user: neo4j
+  password: testpassword

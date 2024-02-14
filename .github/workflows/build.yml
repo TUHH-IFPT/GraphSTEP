@@ -1,0 +1,32 @@
+name: build
+run-name: Test build
+on: [push, pull_request]
+jobs:
+  build-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update apt cache
+        run: sudo apt update
+      - name: Install system dependencies
+        run: sudo apt install -y cmake
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        with:
+          submodules: recursive
+
+      - name: Install repo dependencies
+        run: bash ./build.sh
+
+      - name: Configure Project
+        run: cmake -S . -B build
+      - name: Build Project
+        run: cd build && make GraphSTEP -j$(nproc)
+
+      - name: Build Node.js addon
+        run: npm ci && npm run build
+  

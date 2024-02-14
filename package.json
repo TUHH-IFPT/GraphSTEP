@@ -1,0 +1,18 @@
+{
+  "name": "graphstep",
+  "version": "1.0.0",
+  "author": "Adrian Pustelnik",
+  "description": "GraphSTEP Node.js addon",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "cmake-js compile -O build-node"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "cmake-js": "^7.2.0",
+    "nan": "^2.17.0"
+  }
+}
