@@ -50,10 +50,7 @@ _deps
 .vscode/
 build
 out/build/
-stepcode/build/
 dev/storage
 node_modules
 javascript/*.stp
 [Bb][Uu][Ll][Dd]/
-external/*
-!external/.gitkeep
